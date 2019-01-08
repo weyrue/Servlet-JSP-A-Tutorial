@@ -21,6 +21,8 @@ public class MyServlet implements Servlet {
         String servletName = servletConfig.getServletName();
         servletResponse.setContentType("text/html");
         PrintWriter writer = servletResponse.getWriter();
+        System.out.println("id: " + servletRequest.getParameter("id"));
+        System.out.println("name: " + servletRequest.getParameter("name"));
         writer.print("<html><head></head>" +
                 "<body>Hello from " + servletName
                 + "</body></html>");

@@ -32,8 +32,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>    <!--maven-compiler-plugin版本如果不在本地仓库，可在依赖中添加 -->
                 <configuration>
-                    <source>11</source>    <!--JDK版本 -->
-                    <target>11</target>
+                    <source>7</source>    <!--JDK版本 -->
+                    <target>7</target>
                 </configuration>
             </plugin>
         </plugins>
