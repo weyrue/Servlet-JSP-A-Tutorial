@@ -23,5 +23,38 @@
         <servlet-name>WelcomeServlet</servlet-name>
         <url-pattern>/welcome</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CookieClassServlet</servlet-name>
+        <servlet-class>app02a.CookieClassServlet</servlet-class>
+        <load-on-startup>20</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieClassServlet</servlet-name>
+        <url-pattern>/cookieClass</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CookieInfoServlet</servlet-name>
+        <servlet-class>app02a.CookieInfoServlet</servlet-class>
+        <load-on-startup>20</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieInfoServlet</servlet-name>
+        <url-pattern>/cookieInfo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShoppingCartServlet</servlet-name>
+        <servlet-class>app02a.httpsession.ShoppingCartServlet</servlet-class>
+        <load-on-startup>20</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShoppingCartServlet</servlet-name>
+        <url-pattern>/products</url-pattern>
+        <url-pattern>/viewProductDetails</url-pattern>
+        <url-pattern>/addToCart</url-pattern>
+        <url-pattern>/viewCart</url-pattern>
+    </servlet-mapping>
 
 </web-app>
