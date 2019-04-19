@@ -36,7 +36,7 @@ public class ShoppingCartServlet extends HttpServlet {
         if (uri.endsWith("/viewProductDetails")) {
             sendProductDetails(req, resp);
         }
-        if (uri.endsWith("viewCart")) {
+        if (uri.endsWith("/viewCart")) {
             showCart(req, resp);
         }
     }

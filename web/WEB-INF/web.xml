@@ -57,4 +57,18 @@
         <url-pattern>/viewCart</url-pattern>
     </servlet-mapping>
 
+
+    <!--<servlet>-->
+        <!--<servlet-name>countries</servlet-name>-->
+        <!--<jsp-file>/jsp/app08a/countries.jsp</jsp-file>-->
+        <!--<load-on-startup>20</load-on-startup>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>countries</servlet-name>-->
+        <!--<url-pattern>/countries</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <listener>
+        <listener-class>app08a.PerfStatListener</listener-class>
+    </listener>
+
 </web-app>
