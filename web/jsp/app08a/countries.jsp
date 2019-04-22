@@ -13,9 +13,11 @@
 <body>
 We operate in these countries:
 <ul>
-    <c:forEach items="${countries}" var="country">
+    <c:forEach items='${countries}' var='country'>
         <li>${country.value}</li>
     </c:forEach>
+    <a href='../../image/Purdue.jpg'>Purdue.jpg</a>
+    <img src='../../image/Purdue.jpg'/>
 </ul>
 </body>
 </html>

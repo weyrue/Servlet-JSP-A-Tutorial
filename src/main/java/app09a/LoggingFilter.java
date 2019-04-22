@@ -12,7 +12,7 @@ import java.util.Date;
 
 @WebFilter(filterName = "LoggingFilter", urlPatterns = {"/*"},
         initParams = {
-                @WebInitParam(name = "LogFileName", value = "log.txt"),
+                @WebInitParam(name = "logFileName", value = "log.txt"),
                 @WebInitParam(name = "prefix", value = "URI: ")})
 public class LoggingFilter implements Filter {
     private PrintWriter logger;
@@ -34,6 +34,7 @@ public class LoggingFilter implements Filter {
         String logFileName = filterConfig.getInitParameter("logFileName");
         String appPath = filterConfig.getServletContext().getRealPath("/");
         System.out.println("logFileName: " + logFileName);
+        System.out.println("logFilePath: " + appPath + "/" + logFileName);
 
         try {
             logger = new PrintWriter(new File(appPath, logFileName));
