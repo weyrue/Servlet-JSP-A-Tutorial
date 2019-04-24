@@ -9,7 +9,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(filterName = "DispatcherFilter", urlPatterns = {"/*"})
+@WebFilter(filterName = "DispatcherFilter", urlPatterns = {"/jsp/app10a/*"})
 public class DispatcherFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
