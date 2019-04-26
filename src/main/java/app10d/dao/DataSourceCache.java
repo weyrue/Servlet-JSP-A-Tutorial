@@ -1,35 +1,49 @@
 package app10d.dao;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DataSourceCache {
-    private static DataSourceCache instance;
-    private DataSource dataSource;
+    private static Connection connection;
 
     static {
-        instance = new DataSourceCache();
+        String URL = "jdbc:mysql://localhost:3306/servlettest?useSSL=true";
+        String username = "root";
+        String password = "1234567890";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(URL, username, password);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public DataSourceCache() {
 
+//        String URL = "jdbc:mysql://localhost:3306/servlettest?useSSL=true";
+//        String username = "root";
+//        String password = "1234567890";
+//
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            connection = DriverManager.getConnection(URL, username, password);
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
-        Context context = null;
-
-        try {
-            context = new InitialContext();
-            dataSource = (DataSource) context.lookup("java:comp/env/jdbc/myDataSource");
-        } catch (NamingException e) {
-        }
     }
 
-    public static DataSourceCache getInstance() {
-        return instance;
-    }
+//    public static DataSourceCache getInstance() {
+//        return instance;
+//    }
 
-    public DataSource getDataSource() {
-        return dataSource;
+    public static Connection getConnection() {
+        return connection;
     }
 }

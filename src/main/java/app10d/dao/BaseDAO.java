@@ -1,6 +1,5 @@
 package app10d.dao;
 
-import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,13 +8,11 @@ import java.sql.Statement;
 public class BaseDAO implements DAO {
     @Override
     public Connection getConnection() throws DAOException {
-        DataSource dataSource = DataSourceCache.getInstance().getDataSource();
-
         try {
-            return dataSource.getConnection();
-        } catch (SQLException e) {
+            return DataSourceCache.getConnection();
+        } catch (Exception e) {
             e.printStackTrace();
-            throw new DAOException();
+            throw new DAOException(e.getMessage());
         }
     }
 
