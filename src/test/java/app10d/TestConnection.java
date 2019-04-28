@@ -11,8 +11,10 @@ public class TestConnection {
         String username = "root";
         String password = "1234567890";
 
+
+
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(URL, username, password);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

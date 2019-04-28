@@ -52,7 +52,7 @@ public class Controller3Servlet extends HttpServlet {
         String dispatchUrl = null;
 
         // no action class, there is nothing to be done
-        if (action.equals("product_input")) dispatchUrl = "/jsp/ProductForm.jsp";
+        if (action.equals("product_input")) dispatchUrl = "/jsp/app10d/ProductForm.jsp";
         else if (action.equals("product_save")) {
             // instantiate action class
             ProductForm productForm = new ProductForm();
@@ -79,17 +79,17 @@ public class Controller3Servlet extends HttpServlet {
 
                 // store action in a scope variable for the view
                 request.setAttribute("product", product);
-                dispatchUrl = "/jsp/ProductDetails.jsp";
+                dispatchUrl = "/jsp/app10d/ProductDetails.jsp";
             } else {
                 request.setAttribute("errors", errors);
                 request.setAttribute("form", productForm);
-                dispatchUrl = "/jsp/ProductForm.jsp";
+                dispatchUrl = "/jsp/app10d/ProductForm.jsp";
             }
         } else if (action.equals("product_list") || action.isEmpty()) {
             GetProductAction getProductsAction = new GetProductAction();
             List<Product> products = getProductsAction.getProducts();
             request.setAttribute("products", products);
-            dispatchUrl = "/jsp/ProductList.jsp";
+            dispatchUrl = "/jsp/app10d/ProductList.jsp";
         }
 
         // forward to a view

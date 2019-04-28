@@ -8,8 +8,9 @@ import java.sql.Statement;
 public class BaseDAO implements DAO {
     @Override
     public Connection getConnection() throws DAOException {
+
         try {
-            return DataSourceCache.getConnection();
+            return new DataSourceCache().getConnection();
         } catch (Exception e) {
             e.printStackTrace();
             throw new DAOException(e.getMessage());

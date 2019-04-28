@@ -7,6 +7,8 @@
     <groupId>zy.self-study</groupId>
     <artifactId>Servlet-JSP-A-Tutorial</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <description>Learning and try Servlet</description>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
@@ -14,6 +16,13 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.6</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -42,6 +51,17 @@
                 <configuration>
                     <source>7</source>    <!--JDK版本 -->
                     <target>7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>web</directory>
+                        </resource>
+                    </webResources>
                 </configuration>
             </plugin>
         </plugins>
